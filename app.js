@@ -186,9 +186,12 @@
     const soon = rows.filter(function (r) {
       return r.days !== null && r.days >= 0 && r.days <= 30;
     }).length;
+    const total = state.view === 'conferences'
+      ? rows.length
+      : rows.filter(function (r) { return r.days !== null && r.days >= 0; }).length;
     const noun = state.view === 'conferences'
-      ? '共收录 ' + rows.length + ' 个会场'
-      : '共 ' + rows.length + ' 个开放专刊';
+      ? '共收录 ' + total + ' 个会场'
+      : '共 ' + total + ' 个开放专刊';
     statEl.textContent = '最近 30 天有 ' + soon + ' 个截止 · ' + noun;
   }
 
@@ -203,6 +206,8 @@
     const tbd = filtered.filter(function (r) { return r.days === null; });
     const ended = filtered.filter(function (r) { return r.days !== null && r.days < 0; });
 
+    let silent = [];
+
     if (state.view === 'conferences') {
       GROUP_ORDER.forEach(function (g) {
         const items = upcoming.filter(function (r) { return r.group === g; });
@@ -211,7 +216,7 @@
     } else {
       if (upcoming.length) listEl.appendChild(section('开放中的专刊', upcoming));
 
-      const silent = DATA.journals.filter(function (j) {
+      silent = DATA.journals.filter(function (j) {
         if ((j.specialIssues || []).length) return false;
         if (state.ccf !== 'all' && (j.ccf || 'none') !== state.ccf) return false;
         const q = (state.q || '').trim().toLowerCase();
@@ -230,7 +235,9 @@
           main.appendChild(el('span', 'row-sub', j.name));
           if (j.note) main.appendChild(el('span', 'row-meta', j.note));
           head.appendChild(main);
-          head.appendChild(el('span', 'count tbd', '无'));
+          const count = el('span', 'count tbd');
+          count.appendChild(el('span', 'count-num', '无'));
+          head.appendChild(count);
           row.appendChild(head);
           list.appendChild(row);
         });
@@ -242,7 +249,7 @@
     if (tbd.length) listEl.appendChild(section('待公布', tbd));
     if (ended.length) listEl.appendChild(section('已结束', ended, true));
 
-    emptyEl.hidden = filtered.length > 0;
+    emptyEl.hidden = filtered.length > 0 || silent.length > 0;
     updateStat(rows);
     updatedEl.textContent = '数据核对至 ' + DATA.meta.lastUpdated;
     groupFilter.style.display = state.view === 'conferences' ? '' : 'none';
