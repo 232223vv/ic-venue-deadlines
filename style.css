@@ -7,7 +7,7 @@
   --accent: #0071e3;
   --hairline: rgba(0, 0, 0, 0.10);
   --red: #ff3b30;
-  --orange: #ff9500;
+  --orange: #c25e00;
   --indigo: #5856d6;
   --teal: #30b0c7;
   --gray: #86868b;
@@ -90,12 +90,13 @@ body {
   border: 0; background: transparent; outline: none;
   font: 400 14px/1 var(--font); color: var(--text); width: 168px;
 }
+.search:focus-within { outline: 3px solid rgba(0, 113, 227, 0.4); outline-offset: 2px; }
 
 .filters { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 0; }
 
-/* 分组列表 */
-.group { margin: 36px 0 0; }
-.group > h2, .group > summary {
+/* 分组列表:仅作用于分组容器,避免命中 .badge.group */
+section.group, details.group { margin: 36px 0 0; }
+section.group > h2, details.group > summary {
   font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
   text-transform: uppercase; color: var(--text-3);
   margin: 0 0 10px 16px;
@@ -117,6 +118,7 @@ details.group > summary::after { content: " ▾"; }
   transition: background var(--dur) var(--ease);
 }
 .row-head:hover { background: rgba(0, 0, 0, 0.015); }
+.row-head:focus-visible { outline: 3px solid rgba(0, 113, 227, 0.4); outline-offset: -3px; }
 .row-main { flex: 1; min-width: 0; }
 .row-title { display: block; font-weight: 600; letter-spacing: -0.01em; }
 .row-sub { display: block; font-size: 13px; color: var(--text-3); margin-top: 2px; }
@@ -133,17 +135,17 @@ details.group > summary::after { content: " ▾"; }
 .count.ended .count-num { color: var(--text-3); font-size: 18px; }
 .count.tbd .count-num { color: var(--text-3); font-size: 16px; }
 
-/* 徽章 */
+/* 徽章:文字色为深色变体,11px 下对比度 ≥ 4.5:1;底色保持不变 */
 .badges { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; width: 74px; }
 .badge {
   display: inline-block; padding: 3px 9px; border-radius: var(--radius-pill);
-  font-size: 11px; font-weight: 500; line-height: 1.3; color: var(--gray);
+  font-size: 11px; font-weight: 500; line-height: 1.3; color: #515154;
   background: rgba(134, 134, 139, 0.12);
 }
-.badge[data-ccf="A"] { color: var(--accent); background: rgba(0, 113, 227, 0.10); }
+.badge[data-ccf="A"] { color: #0058b3; background: rgba(0, 113, 227, 0.10); }
 .badge[data-ccf="B"] { color: var(--indigo); background: rgba(88, 86, 214, 0.10); }
-.badge[data-ccf="C"] { color: var(--teal); background: rgba(48, 176, 199, 0.12); }
-.badge.group { color: var(--text-2); background: rgba(0, 0, 0, 0.05); }
+.badge[data-ccf="C"] { color: #0b6b7d; background: rgba(48, 176, 199, 0.12); }
+.badge.group { color: #515154; background: rgba(0, 0, 0, 0.05); }
 
 /* 展开体 */
 .row-body-wrap {

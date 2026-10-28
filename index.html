@@ -31,7 +31,7 @@
         <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
         <path d="M10.8 10.8L14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
-      <input id="q" type="search" placeholder="搜索会场、主题" autocomplete="off">
+      <input id="q" type="search" placeholder="搜索会场、主题" aria-label="搜索会场、主题" autocomplete="off">
     </label>
   </div>
 
@@ -59,11 +59,11 @@
 
   <div id="list"></div>
   <p class="empty" id="empty" hidden>没有符合当前条件的会场,放宽筛选再试。</p>
-
-  <footer class="footnote">
-    数据取自各会场官网与出版社页面,核对日期见页首;查不到的日期标记为“待公布”,不做推测。时区以会场公布为准:官网未公布时区者,会议按会场当地时区记录,期刊专刊按 AoE 记录。
-  </footer>
 </main>
+
+<footer class="wrap footnote">
+  数据取自各会场官网与出版社页面,核对日期见页首;查不到的日期标记为“待公布”,不做推测。时区以会场公布为准:官网未公布时区者,会议按会场当地时区记录,期刊专刊按 AoE 记录。
+</footer>
 
 <script src="data.js"></script>
 <script src="lib.js"></script>
