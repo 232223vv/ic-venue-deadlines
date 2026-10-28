@@ -4,7 +4,7 @@
       lastUpdated: '2026-10-28',
       ccfEdition: 'CCF 第七版(2026-03-31)',
       tzNote:
-        '截止时间以各会场官网公布时区为准;官网只给出日期、未给出时刻与时区时,按会场当地时区记录并在 note 中注明。'
+        '官网未公布时区时:会议按会场当地时区记录并在该 deadline 的 note 注明;期刊专刊无会场,按 AoE 记录。'
     },
     conferences: [
       {
@@ -404,7 +404,8 @@
         ccf: 'B',
         rolling: true,
         url: 'https://dl.acm.org/journal/todaes',
-        specialIssues: []
+        specialIssues: [],
+        note: 'ACM DL 返回 403,未能核验(2026-10-28),需人工核对'
       },
       {
         id: 'tecs',
@@ -414,7 +415,8 @@
         ccf: 'B',
         rolling: true,
         url: 'https://dl.acm.org/journal/tecs',
-        specialIssues: []
+        specialIssues: [],
+        note: 'ACM DL 返回 403,未能核验(2026-10-28),需人工核对'
       },
       {
         id: 'dt',
