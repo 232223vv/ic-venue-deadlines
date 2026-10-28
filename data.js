@@ -384,7 +384,17 @@
         ccf: null,
         rolling: true,
         url: 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8920',
-        specialIssues: []
+        specialIssues: [
+          {
+            title: 'Industrial Special Issue on Circuits and Systems for Data Centers',
+            topics: ['数据中心电路与系统', '云计算基础设施', '大规模存储电路', '高速 SerDes', '电源管理与供电'],
+            deadline: '2026-11-01',
+            tz: 'AoE',
+            link: 'https://ieee-cas.org/files/ieeecass/2026-10/industrial-special-issue-cfp_v4_deadline_extended.pdf',
+            source: 'https://ieee-cas.org/publication/TCAS-II',
+            checked: '2026-10-28'
+          }
+        ]
       },
       {
         id: 'todaes',
@@ -424,7 +434,44 @@
         ccf: null,
         rolling: true,
         url: 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5503868',
-        specialIssues: []
+        specialIssues: [
+          {
+            title: 'Adaptive Reliability in Circuits and Systems for Exascale and Intelligent Computing Hardware',
+            topics: ['自适应电路', 'AI 加速器可靠架构', '跨层容错与自愈', 'Chiplet 异构集成', '存内与近存计算', '运行时重构', '老化感知优化', '可靠性软硬件协同'],
+            deadline: '2026-11-01',
+            tz: 'AoE',
+            link: 'https://ieee-cas.org/files/ieeecass/2026-09/jetcas-cfp.pdf',
+            source: 'https://ieee-cas.org/publication/JETCAS',
+            checked: '2026-10-28'
+          },
+          {
+            title: 'Efficient and Secure Hardware Acceleration for Post-Quantum Cryptography',
+            topics: ['PQC 硬件加速', '侧信道分析与防护', '轻量级实现', 'FPGA/ASIC 架构', '后量子算术单元', '容错与可靠性', '设计自动化工具'],
+            deadline: '2026-11-23',
+            tz: 'AoE',
+            link: 'https://ieee-cas.org/files/ieeecass/2026-10/jetcas-special-issue-proposal-final-cfp_quantum.pdf',
+            source: 'https://ieee-cas.org/publication/JETCAS',
+            checked: '2026-10-28'
+          },
+          {
+            title: 'Power Circuits and Systems Transition when Green Energy and AI Empowerment Cross',
+            topics: ['绿色能源系统建模', '宽频振荡与稳定性', 'AI 分析与控制', '电力电子拓扑优化', '多时间尺度建模', '多源状态感知', '硬件在环仿真'],
+            deadline: '2027-03-01',
+            tz: 'AoE',
+            link: 'https://ieee-cas.org/files/ieeecass/2026-10/jetcas-special-issue-proposal-final_27.pdf',
+            source: 'https://ieee-cas.org/publication/JETCAS',
+            checked: '2026-10-28'
+          },
+          {
+            title: 'AI for ICs and ICs for AI: Emerging Trends in Circuits and Systems',
+            topics: ['AI 驱动 IC 设计', '模拟电路自动综合', 'AI 辅助物理设计', 'Chiplet 与 3D 集成', 'AI 加速器架构', '存内计算', '硬件安全与测试'],
+            deadline: '2027-05-10',
+            tz: 'AoE',
+            link: 'https://ieee-cas.org/files/ieeecass/2026-10/jetcas_cfp_2026_aiforics.pdf',
+            source: 'https://ieee-cas.org/publication/JETCAS',
+            checked: '2026-10-28'
+          }
+        ]
       },
       {
         id: 'ojcas',
