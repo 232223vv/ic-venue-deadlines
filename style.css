@@ -57,6 +57,7 @@ body {
   margin: 0; font-size: 48px; line-height: 1.1;
   font-weight: 600; letter-spacing: -0.02em;
 }
+.hero h1 .nowrap { white-space: nowrap; }
 .hero .sub { margin: 12px 0 0; color: var(--text-2); }
 .hero .stat { margin: 20px 0 0; font-size: 14px; color: var(--text-3); }
 

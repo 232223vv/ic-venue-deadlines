@@ -3,6 +3,7 @@
   const Lib = window.Lib;
 
   const GROUP_LABEL = { eda: 'EDA / 设计自动化', circuits: '电路 / 器件', arch: '体系结构' };
+  const BADGE_LABEL = { eda: 'EDA', circuits: '电路', arch: '架构' };
   const GROUP_ORDER = ['eda', 'circuits', 'arch'];
 
   const state = {
@@ -47,7 +48,8 @@
         group: c.group,
         ccf: c.ccf,
         place: c.place || '',
-        when: c.startDate ? (c.endDate ? c.startDate + ' – ' + c.endDate : c.startDate) : '',
+        when: '',
+        dates: c.startDate ? (c.endDate ? c.startDate + ' – ' + c.endDate : c.startDate) : '',
         days: d.next ? d.next.days : null,
         deadlineLabel: d.next ? d.next.label + ' · ' + d.next.date + ' ' + d.next.tz : '',
         deadlines: d.items,
@@ -74,9 +76,9 @@
           group: 'journal',
           ccf: j.ccf,
           place: j.publisher || '',
-          when: '截稿 ' + si.deadline,
+          when: '',
           days: days,
-          deadlineLabel: si.deadline + ' ' + (si.tz || 'AoE'),
+          deadlineLabel: '截稿 ' + si.deadline + ' ' + (si.tz || 'AoE'),
           deadlines: [{ label: '专刊截稿', date: si.deadline, tz: si.tz || 'AoE', days: days, note: si.note || '' }],
           topics: si.topics || [],
           links: [{ label: '专刊页', href: si.link }, { label: '期刊主页', href: j.url }],
@@ -112,7 +114,7 @@
     head.setAttribute('aria-expanded', String(expanded));
 
     const badges = el('span', 'badges');
-    if (r.group !== 'journal') badges.appendChild(badge(GROUP_LABEL[r.group] || r.group, { class: 'badge group' }));
+    if (r.group !== 'journal') badges.appendChild(badge(BADGE_LABEL[r.group] || r.group, { class: 'badge group' }));
     badges.appendChild(badge(r.ccf ? 'CCF ' + r.ccf : '目录外', { 'data-ccf': r.ccf || 'none' }));
 
     const main = el('span', 'row-main');
@@ -141,6 +143,13 @@
     }
 
     if (r.note) body.appendChild(el('p', 'row-note', '备注:' + r.note));
+
+    if (r.dates) {
+      const line = el('p', 'deadline');
+      line.appendChild(el('b', '', '会期'));
+      line.appendChild(el('span', '', r.dates));
+      body.appendChild(line);
+    }
 
     r.deadlines.forEach(function (d) {
       const line = el('p', 'deadline');
