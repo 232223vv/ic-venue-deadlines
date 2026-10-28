@@ -41,3 +41,34 @@ test('countdownLabel 文案', () => {
   assert.equal(Lib.countdownLabel(1), '明天');
   assert.equal(Lib.countdownLabel(12), '12 天');
 });
+
+const rows = [
+  { id: 'a', group: 'eda', ccf: 'A', days: 10, haystack: 'dac design automation' },
+  { id: 'b', group: 'circuits', ccf: null, days: 40, haystack: 'isscc solid state' },
+  { id: 'c', group: 'arch', ccf: 'A', days: -2, haystack: 'isca architecture' },
+  { id: 'd', group: 'eda', ccf: 'B', days: null, haystack: 'iccad cad' }
+];
+
+test('filterRows: 按方向、等级、时间窗、关键词组合', () => {
+  const base = { view: 'conferences', group: 'all', ccf: 'all', window: 'all', q: '' };
+  assert.equal(Lib.filterRows(rows, base).length, 4);
+  assert.deepEqual(Lib.filterRows(rows, Object.assign({}, base, { group: 'eda' })).map(r => r.id), ['a', 'd']);
+  assert.deepEqual(Lib.filterRows(rows, Object.assign({}, base, { ccf: 'A' })).map(r => r.id), ['a', 'c']);
+  assert.deepEqual(Lib.filterRows(rows, Object.assign({}, base, { ccf: 'none' })).map(r => r.id), ['b']);
+  assert.deepEqual(Lib.filterRows(rows, Object.assign({}, base, { window: '30' })).map(r => r.id), ['a']);
+  assert.deepEqual(Lib.filterRows(rows, Object.assign({}, base, { q: 'isca' })).map(r => r.id), ['c']);
+});
+
+test('filterRows: 期刊视图忽略方向筛选', () => {
+  const state = { view: 'journals', group: 'eda', ccf: 'all', window: 'all', q: '' };
+  assert.equal(Lib.filterRows(rows, state).length, 4);
+});
+
+test('sortRows: 未截止升序、待公布最后、已结束按最近优先', () => {
+  assert.deepEqual(Lib.sortRows(rows).map(r => r.id), ['a', 'b', 'c', 'd']);
+  const two = [
+    { id: 'x', days: -30, group: 'eda', ccf: 'A', haystack: '' },
+    { id: 'y', days: -1, group: 'eda', ccf: 'A', haystack: '' }
+  ];
+  assert.deepEqual(Lib.sortRows(two).map(r => r.id), ['y', 'x']);
+});
