@@ -64,3 +64,14 @@ test('期刊字段完整', () => {
     });
   });
 });
+
+test('期刊带核对日期与 https 链接', () => {
+  DATA.journals.forEach(j => {
+    assert.match(j.checked, ISO, j.id + ' 缺 checked');
+    assert.match(j.url, /^https:\/\//, j.id + ' url 非 https');
+    j.specialIssues.forEach(si => {
+      assert.match(si.tz, TZ, j.id + ' 专刊 tz 缺失');
+      assert.match(si.source, /^https?:\/\//, j.id + ' 专刊 source 缺失');
+    });
+  });
+});

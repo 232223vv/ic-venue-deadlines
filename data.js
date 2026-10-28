@@ -354,6 +354,7 @@
         ccf: 'A',
         rolling: true,
         url: 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=43',
+        checked: '2026-10-28',
         specialIssues: []
       },
       {
@@ -364,6 +365,7 @@
         ccf: 'B',
         rolling: true,
         url: 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=92',
+        checked: '2026-10-28',
         specialIssues: []
       },
       {
@@ -374,6 +376,7 @@
         ccf: 'C',
         rolling: true,
         url: 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919',
+        checked: '2026-10-28',
         specialIssues: []
       },
       {
@@ -384,6 +387,7 @@
         ccf: null,
         rolling: true,
         url: 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8920',
+        checked: '2026-10-28',
         specialIssues: [
           {
             title: 'Industrial Special Issue on Circuits and Systems for Data Centers',
@@ -392,7 +396,8 @@
             tz: 'AoE',
             link: 'https://ieee-cas.org/files/ieeecass/2026-10/industrial-special-issue-cfp_v4_deadline_extended.pdf',
             source: 'https://ieee-cas.org/publication/TCAS-II',
-            checked: '2026-10-28'
+            checked: '2026-10-28',
+            note: '需 ≥75% 作者来自工业界'
           }
         ]
       },
@@ -404,6 +409,7 @@
         ccf: 'B',
         rolling: true,
         url: 'https://dl.acm.org/journal/todaes',
+        checked: '2026-10-28',
         specialIssues: [],
         note: 'ACM DL 返回 403,未能核验(2026-10-28),需人工核对'
       },
@@ -415,6 +421,7 @@
         ccf: 'B',
         rolling: true,
         url: 'https://dl.acm.org/journal/tecs',
+        checked: '2026-10-28',
         specialIssues: [],
         note: 'ACM DL 返回 403,未能核验(2026-10-28),需人工核对'
       },
@@ -426,6 +433,7 @@
         ccf: null,
         rolling: true,
         url: 'https://www.computer.org/csdl/magazine/dt',
+        checked: '2026-10-28',
         specialIssues: []
       },
       {
@@ -436,6 +444,7 @@
         ccf: null,
         rolling: true,
         url: 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5503868',
+        checked: '2026-10-28',
         specialIssues: [
           {
             title: 'Adaptive Reliability in Circuits and Systems for Exascale and Intelligent Computing Hardware',
@@ -483,6 +492,7 @@
         ccf: null,
         rolling: true,
         url: 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8784029',
+        checked: '2026-10-28',
         specialIssues: []
       }
     ]

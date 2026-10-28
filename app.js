@@ -21,25 +21,9 @@
   const updatedEl = document.getElementById('lastUpdated');
   const groupFilter = document.getElementById('groupFilter');
 
-  function nextOf(deadlines, now) {
-    const items = deadlines.map(function (d) {
-      return {
-        label: d.label,
-        date: d.date,
-        tz: d.tz,
-        note: d.note || '',
-        days: Lib.daysLeft(d.date, d.tz, now)
-      };
-    });
-    const sorted = items.slice().sort(function (a, b) { return a.days - b.days; });
-    const upcoming = sorted.filter(function (d) { return d.days >= 0; });
-    const rep = upcoming[0] || (sorted.length ? sorted[sorted.length - 1] : null);
-    return { next: rep, items: sorted };
-  }
-
   function conferenceRows(now) {
     return DATA.conferences.map(function (c) {
-      const d = nextOf(c.deadlines, now);
+      const d = Lib.nextOf(c.deadlines, now);
       return {
         id: c.id,
         kind: 'conference',
@@ -72,7 +56,7 @@
           id: j.id + '-si-' + i,
           kind: 'journal',
           title: si.title,
-          subtitle: j.abbr + ' 专刊',
+          subtitle: j.abbr + ' 专刊 · 滚动投稿',
           group: 'journal',
           ccf: j.ccf,
           place: j.publisher || '',
@@ -242,7 +226,16 @@
           const main = el('span', 'row-main');
           main.appendChild(el('span', 'row-title', j.abbr));
           main.appendChild(el('span', 'row-sub', j.name));
-          if (j.note) main.appendChild(el('span', 'row-meta', j.note));
+          const metaText = [j.note, j.rolling ? '滚动投稿' : '', j.checked ? '核对 ' + j.checked : '']
+            .filter(Boolean).join(' · ');
+          main.appendChild(el('span', 'row-meta', metaText));
+          const links = el('span', 'row-links');
+          const site = el('a', '', '官网');
+          site.href = j.url;
+          site.target = '_blank';
+          site.rel = 'noopener noreferrer';
+          links.appendChild(site);
+          main.appendChild(links);
           head.appendChild(main);
           const count = el('span', 'count tbd');
           count.appendChild(el('span', 'count-num', '无'));

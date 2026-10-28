@@ -67,6 +67,22 @@
     });
   }
 
+  function nextOf(deadlines, now) {
+    const items = (deadlines || []).map(function (d) {
+      return {
+        label: d.label,
+        date: d.date,
+        tz: d.tz,
+        note: d.note || '',
+        days: daysLeft(d.date, d.tz, now)
+      };
+    });
+    const sorted = items.slice().sort(function (a, b) { return a.days - b.days; });
+    const upcoming = sorted.filter(function (d) { return d.days >= 0; });
+    const rep = upcoming[0] || (sorted.length ? sorted[sorted.length - 1] : null);
+    return { next: rep, items: sorted };
+  }
+
   const Lib = {
     offsetHours: offsetHours,
     isoToUTC: isoToUTC,
@@ -75,7 +91,8 @@
     urgency: urgency,
     countdownLabel: countdownLabel,
     filterRows: filterRows,
-    sortRows: sortRows
+    sortRows: sortRows,
+    nextOf: nextOf
   };
 
   global.Lib = Lib;

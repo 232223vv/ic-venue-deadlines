@@ -72,3 +72,33 @@ test('sortRows: 未截止升序、待公布最后、已结束按最近优先', (
   ];
   assert.deepEqual(Lib.sortRows(two).map(r => r.id), ['y', 'x']);
 });
+
+test('nextOf: 有未来截止时取最近的未来', () => {
+  const now = new Date('2026-10-28T00:00:00Z');
+  const r = Lib.nextOf([
+    { label: '摘要', date: '2026-11-20', tz: 'AoE' },
+    { label: '论文', date: '2026-11-10', tz: 'AoE' }
+  ], now);
+  assert.equal(r.next.label, '论文');
+  assert.equal(r.next.days, 14);
+});
+
+test('nextOf: 全部已过时取最近一次已过', () => {
+  const now = new Date('2026-10-28T00:00:00Z');
+  const r = Lib.nextOf([
+    { label: '摘要', date: '2026-04-07', tz: 'AoE' },
+    { label: '论文', date: '2026-09-09', tz: 'AoE' }
+  ], now);
+  assert.equal(r.next.label, '论文');
+  assert.equal(r.next.days, -48);
+});
+
+test('nextOf: 空列表返回 null', () => {
+  assert.equal(Lib.nextOf([], new Date('2026-10-28T00:00:00Z')).next, null);
+  assert.equal(Lib.nextOf(undefined, new Date('2026-10-28T00:00:00Z')).next, null);
+});
+
+test('nextOf: 今天截止为 0', () => {
+  const now = new Date('2026-10-28T00:00:00Z'); // AoE = 2026-10-27
+  assert.equal(Lib.nextOf([{ label: '论文', date: '2026-10-27', tz: 'AoE' }], now).next.days, 0);
+});
