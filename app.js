@@ -30,9 +30,10 @@
         days: Lib.daysLeft(d.date, d.tz, now)
       };
     });
-    const upcoming = items.filter(function (d) { return d.days >= 0; })
-      .sort(function (a, b) { return a.days - b.days; });
-    return { next: upcoming[0] || null, items: items.slice().sort(function (a, b) { return a.days - b.days; }) };
+    const sorted = items.slice().sort(function (a, b) { return a.days - b.days; });
+    const upcoming = sorted.filter(function (d) { return d.days >= 0; });
+    const rep = upcoming[0] || (sorted.length ? sorted[sorted.length - 1] : null);
+    return { next: rep, items: sorted };
   }
 
   function conferenceRows(now) {
@@ -223,7 +224,7 @@
         const list = el('div', 'row-list');
         silent.forEach(function (j) {
           const row = el('div', 'row');
-          const head = el('div', 'row-head');
+          const head = el('div', 'row-head row-head-static');
           const main = el('span', 'row-main');
           main.appendChild(el('span', 'row-title', j.abbr));
           main.appendChild(el('span', 'row-sub', j.name));
@@ -268,6 +269,7 @@
     if (!head) return;
     const row = head.parentElement;
     const id = row.dataset.id;
+    if (!id) return;
     const open = state.expanded.has(id);
     if (open) state.expanded.delete(id); else state.expanded.add(id);
     const nowExpanded = !open;

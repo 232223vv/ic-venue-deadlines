@@ -118,6 +118,8 @@ details.group > summary::after { content: " ▾"; }
   transition: background var(--dur) var(--ease);
 }
 .row-head:hover { background: rgba(0, 0, 0, 0.015); }
+.row-head-static { cursor: default; }
+.row-head-static:hover { background: none; }
 .row-head:focus-visible { outline: 3px solid rgba(0, 113, 227, 0.4); outline-offset: -3px; }
 .row-main { flex: 1; min-width: 0; }
 .row-title { display: block; font-weight: 600; letter-spacing: -0.01em; }
