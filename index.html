@@ -10,7 +10,10 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <span class="brand">投稿日历</span>
-    <span class="meta" id="lastUpdated"></span>
+    <span class="header-right">
+      <span class="meta" id="lastUpdated"></span>
+      <button type="button" class="refresh-btn" id="refreshBtn">刷新数据</button>
+    </span>
   </div>
 </header>
 
@@ -59,6 +62,7 @@
 
   <div id="list"></div>
   <p class="empty" id="empty" hidden>没有符合当前条件的结果,放宽筛选再试。</p>
+  <section class="refresh-panel" id="refreshPanel" hidden aria-live="polite"></section>
 </main>
 
 <footer class="wrap footnote">

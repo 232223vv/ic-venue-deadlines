@@ -1,5 +1,5 @@
 (function () {
-  const DATA = window.DATA;
+  let DATA = window.DATA;
   const Lib = window.Lib;
 
   const GROUP_LABEL = { eda: 'EDA / 设计自动化', circuits: '电路 / 器件', arch: '体系结构' };
@@ -289,5 +289,74 @@
   });
 
   render();
+
+  const refreshBtn = document.getElementById('refreshBtn');
+  const refreshPanel = document.getElementById('refreshPanel');
+  const STATUS_LABEL = {
+    ok: '已抓取', blocked: '被拦截', changed: '结构变化', error: '解析失败', 'no-source': '无可用源'
+  };
+
+  function showRefreshError(message) {
+    refreshPanel.hidden = false;
+    refreshPanel.textContent = '';
+    refreshPanel.appendChild(el('p', 'refresh-note', '抓取失败:' + message));
+  }
+
+  function showRefreshReport(payload) {
+    refreshPanel.hidden = false;
+    refreshPanel.textContent = '';
+
+    const head = el('div', 'refresh-head');
+    head.appendChild(el('strong', '', '抓取结果'));
+    head.appendChild(el('span', 'refresh-time', '核对 ' + payload.today + (payload.wrote ? ' · 已写回 data.js' : ' · 数据无变化')));
+    refreshPanel.appendChild(head);
+
+    const list = el('ul', 'refresh-list');
+    (payload.report || []).forEach(function (row) {
+      const li = el('li', 'refresh-row');
+      li.appendChild(el('span', 'status status-' + row.status, STATUS_LABEL[row.status] || row.status));
+      li.appendChild(el('span', 'refresh-src', row.label || row.source));
+      li.appendChild(el('span', 'refresh-detail', row.detail || ''));
+      list.appendChild(li);
+    });
+    refreshPanel.appendChild(list);
+
+    const skipped = payload.applied && payload.applied.skipped;
+    if (skipped && skipped.length) {
+      refreshPanel.appendChild(el('p', 'refresh-note', '未覆盖:' + skipped.join(';')));
+    }
+  }
+
+  async function runRefresh() {
+    refreshBtn.disabled = true;
+    refreshBtn.textContent = '抓取中…';
+    try {
+      const res = await fetch('/api/refresh', { method: 'POST' });
+      const payload = await res.json().catch(function () { return {}; });
+      if (!res.ok) {
+        showRefreshError(payload.error || ('HTTP ' + res.status));
+        return;
+      }
+      DATA = payload.data;
+      render();
+      showRefreshReport(payload);
+    } catch (err) {
+      showRefreshError(err && err.message ? err.message : String(err));
+    } finally {
+      refreshBtn.textContent = '刷新数据';
+      refreshBtn.disabled = false;
+    }
+  }
+
+  if (location.protocol === 'file:') {
+    refreshBtn.disabled = true;
+    refreshBtn.title = '需先运行 node server.mjs,再访问 http://127.0.0.1:4173';
+    refreshPanel.hidden = false;
+    refreshPanel.textContent = '';
+    refreshPanel.appendChild(el('p', 'refresh-note', '当前以 file:// 打开,抓取需要本地服务:运行 node server.mjs 后访问 http://127.0.0.1:4173 。'));
+  } else {
+    refreshBtn.addEventListener('click', runRefresh);
+  }
+
   setInterval(render, 30 * 60 * 1000);
 })();
