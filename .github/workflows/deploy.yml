@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '0 22 * * *'
+    # 每天 00:00 北京时间(= 前一天 16:00 UTC);GitHub 的 cron 只认 UTC
+    - cron: '0 16 * * *'
   workflow_dispatch:
 
 permissions:

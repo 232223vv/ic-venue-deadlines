@@ -359,7 +359,7 @@
     refreshPanel.appendChild(el('p', 'refresh-note',
       location.protocol === 'file:'
         ? '当前以 file:// 打开,抓取需要本地服务:运行 node server.mjs 后访问 http://127.0.0.1:4173 。'
-        : '线上页面为只读,数据每天 06:00(北京时间)由 GitHub Actions 抓取并更新;本地运行 node server.mjs 可手动刷新。'));
+        : '线上页面为只读,数据每天 00:00(北京时间)由 GitHub Actions 抓取并更新;本地运行 node server.mjs 可手动刷新。'));
   }
 
   setInterval(render, 30 * 60 * 1000);
