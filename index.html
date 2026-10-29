@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>投稿日历 · IC / EDA / 体系结构</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <span class="brand">投稿日历</span>
+    <span class="meta" id="lastUpdated"></span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>下一次截止,<span class="nowrap">还有几天。</span></h1>
+    <p class="sub">IC 设计 · EDA · 体系结构　会议与期刊专刊</p>
+    <p class="stat" id="statLine"></p>
+  </section>
+
+  <div class="toolbar">
+    <div class="segmented" role="group" aria-label="视图" data-filter="view">
+      <button type="button" data-value="conferences" aria-pressed="true">会议</button>
+      <button type="button" data-value="journals" aria-pressed="false">期刊专刊</button>
+    </div>
+    <label class="search">
+      <svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14">
+        <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10.8 10.8L14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input id="q" type="search" placeholder="搜索会场、主题" aria-label="搜索会场、主题" autocomplete="off">
+    </label>
+  </div>
+
+  <div class="filters">
+    <div class="segmented" role="group" aria-label="方向" data-filter="group" id="groupFilter">
+      <button type="button" data-value="all" aria-pressed="true">全部</button>
+      <button type="button" data-value="eda" aria-pressed="false">EDA</button>
+      <button type="button" data-value="circuits" aria-pressed="false">电路</button>
+      <button type="button" data-value="arch" aria-pressed="false">架构</button>
+    </div>
+    <div class="segmented" role="group" aria-label="等级" data-filter="ccf">
+      <button type="button" data-value="all" aria-pressed="true">全部等级</button>
+      <button type="button" data-value="A" aria-pressed="false">A</button>
+      <button type="button" data-value="B" aria-pressed="false">B</button>
+      <button type="button" data-value="C" aria-pressed="false">C</button>
+      <button type="button" data-value="none" aria-pressed="false">目录外</button>
+    </div>
+    <div class="segmented" role="group" aria-label="时间窗" data-filter="window">
+      <button type="button" data-value="all" aria-pressed="true">全部</button>
+      <button type="button" data-value="30" aria-pressed="false">30 天</button>
+      <button type="button" data-value="90" aria-pressed="false">90 天</button>
+      <button type="button" data-value="180" aria-pressed="false">180 天</button>
+    </div>
+  </div>
+
+  <div id="list"></div>
+  <p class="empty" id="empty" hidden>没有符合当前条件的结果,放宽筛选再试。</p>
+</main>
+
+<footer class="wrap footnote">
+  数据取自各会场官网与出版社页面,核对日期见页首;查不到的日期标记为“待公布”,不做推测。时区以会场公布为准:官网未公布时区者,会议按会场当地时区记录,期刊专刊按 AoE 记录。
+</footer>
+
+<script src="data.js"></script>
+<script src="lib.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
