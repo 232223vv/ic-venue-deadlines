@@ -348,14 +348,18 @@
     }
   }
 
-  if (location.protocol === 'file:') {
+  const isLocalServer = (location.hostname === '127.0.0.1' || location.hostname === 'localhost') && location.protocol.indexOf('http') === 0;
+  if (isLocalServer) {
+    refreshBtn.addEventListener('click', runRefresh);
+  } else {
     refreshBtn.disabled = true;
-    refreshBtn.title = '需先运行 node server.mjs,再访问 http://127.0.0.1:4173';
+    refreshBtn.title = '线上为只读,数据由 GitHub Actions 每天自动更新';
     refreshPanel.hidden = false;
     refreshPanel.textContent = '';
-    refreshPanel.appendChild(el('p', 'refresh-note', '当前以 file:// 打开,抓取需要本地服务:运行 node server.mjs 后访问 http://127.0.0.1:4173 。'));
-  } else {
-    refreshBtn.addEventListener('click', runRefresh);
+    refreshPanel.appendChild(el('p', 'refresh-note',
+      location.protocol === 'file:'
+        ? '当前以 file:// 打开,抓取需要本地服务:运行 node server.mjs 后访问 http://127.0.0.1:4173 。'
+        : '线上页面为只读,数据每天 06:00(北京时间)由 GitHub Actions 抓取并更新;本地运行 node server.mjs 可手动刷新。'));
   }
 
   setInterval(render, 30 * 60 * 1000);
