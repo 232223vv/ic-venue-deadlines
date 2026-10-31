@@ -1,10 +1,10 @@
 (function (global) {
   const DATA = {
   "meta": {
-    "lastUpdated": "2026-10-30",
+    "lastUpdated": "2026-10-31",
     "ccfEdition": "CCF 第七版(2026-03-31)",
     "tzNote": "官网未公布时区时:会议按会场当地时区记录并在该 deadline 的 note 注明;期刊专刊无会场,按 AoE 记录。",
-    "lastFetched": "2026-10-30"
+    "lastFetched": "2026-10-31"
   },
   "conferences": [
     {
@@ -45,7 +45,7 @@
       ],
       "url": "https://dac.com",
       "source": "https://dac.com/2027/program/research-manuscript-submissions",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "投稿于 2026-11-11 摘要截止,2026-11-18 论文截止(均为 5:00pm US Pacific Time)。"
     },
@@ -87,7 +87,7 @@
       ],
       "url": "https://iccad.com",
       "source": "https://iccad.com/2026/authors/call-for-papers",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "ICCAD 2026 论文投稿已于 2026-04 截止,会议尚未举行。"
     },
@@ -129,7 +129,7 @@
       ],
       "url": "https://date-conference.com",
       "source": "https://date-conference.com/call-for-papers",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "注册论文投稿已于 2026-09 截止;Late Breaking Results 终稿为 2026-11-29 AoE。"
     },
@@ -171,7 +171,7 @@
       ],
       "url": "https://aspdac.com",
       "source": "https://www.aspdac.com/aspdac2027/author/technical_paper/index.html",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "论文投稿已于 2026-07 截止;录用名单已公布,终稿 2026-10-27 AoE。"
     },
@@ -213,7 +213,7 @@
       ],
       "url": "https://iccd-conf.com",
       "source": "https://iccd-conf.com/home.html",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "官网 Call for Papers 内页仍是 2025 版,2026 重要日期以首页 Important Dates 为准。"
     },
@@ -249,7 +249,7 @@
       ],
       "url": "https://isscc.org",
       "source": "https://isscc.org/call-for-papers-overview-26",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "Late Breaking News:意向 2026-10-07、论文 2026-12-01(官网未标注时区)。"
     },
@@ -285,7 +285,7 @@
       ],
       "url": "https://ieee-cicc.org",
       "source": "https://www.ieee-cicc.org/2027-call-for-papers/",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "官网首页写 April 18–21, 2027,CFP 页写 April 18 – 22, 2027;此处取 CFP 页,差异待官网统一。"
     },
@@ -319,7 +319,7 @@
       ],
       "url": "https://a-sscc2026.org",
       "source": "https://epapers2.org/asscc2026/ESR/authorinfo1.php",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "会期与地点取自 a-sscc2026.org;投稿截止取自官网 Authors → Submission Guidelines 指向的官方投稿系统。"
     },
@@ -359,7 +359,7 @@
       ],
       "url": "https://www.esserc2027.org",
       "source": "https://www.esserc2027.org/conference",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "第 53 届,Venue 为 Marina Congress Center。"
     },
@@ -395,7 +395,7 @@
       ],
       "url": "https://vlsisymposium.org",
       "source": "https://www.vlsisymposium.org/",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "2027 主题 \"From Atoms to Intelligence – VLSI Empowering Society\"。"
     },
@@ -431,7 +431,7 @@
       ],
       "url": "https://2027.ieee-iscas.org",
       "source": "https://2027.ieee-iscas.org/call-for-papers",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "会期 2027-06-06~09 与地点已公布;官网 CFP 页与 FAQ 均只写 Regular Paper Submission Deadline \"now closed\",未给出具体日期,故不填截止日期。已公布节点:录用通知 2027-01-11、终稿 2027-01-27。"
     },
@@ -485,7 +485,7 @@
       ],
       "url": "https://iscaconf.org",
       "source": "https://iscaconf.org/isca2027/",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "第 54 届,与 FCRC 2027 合办;Industry Track 摘要 2026-12-06、论文 2026-12-13 AoE。"
     },
@@ -527,7 +527,7 @@
       ],
       "url": "https://microarch.org",
       "source": "https://microarch.org/micro59/submit/papers.php",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "MICRO-59,投稿已于 2026-04 截止;MICRO 2027 官网尚未上线,故收录本届。"
     },
@@ -569,7 +569,7 @@
       ],
       "url": "https://hpca-conf.org",
       "source": "https://conf.researchr.org/track/hpca-2027/hpca-2027-main-conference",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "与 PPoPP/CGO/CC 2027 合办;通知 2026-11-06。"
     },
@@ -611,7 +611,7 @@
       ],
       "url": "https://asplos-conference.org",
       "source": "https://www.asplos-conference.org/asplos2027/cfp/",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "status": "confirmed",
       "note": "双轮投稿(April / September),两轮均已截止;September cycle 通知 2026-12-21。"
     }
@@ -625,7 +625,7 @@
       "ccf": "A",
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=43",
-      "checked": "2026-10-29",
+      "checked": "2026-10-31",
       "specialIssues": []
     },
     {
@@ -647,7 +647,7 @@
       "ccf": "C",
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "specialIssues": []
     },
     {
@@ -658,7 +658,7 @@
       "ccf": null,
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8920",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "specialIssues": [
         {
           "title": "Industrial Special Issue on Circuits and Systems for Data Centers",
@@ -673,7 +673,7 @@
           "tz": "AoE",
           "link": "https://ieee-cas.org/files/ieeecass/2026-10/industrial-special-issue-cfp_v4_deadline_extended.pdf",
           "source": "https://ieee-cas.org/publication/TCAS-II",
-          "checked": "2026-10-30",
+          "checked": "2026-10-31",
           "note": "需 ≥75% 作者来自工业界"
         }
       ]
@@ -721,7 +721,7 @@
       "ccf": null,
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5503868",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "specialIssues": [
         {
           "title": "Adaptive Reliability in Circuits and Systems for Exascale and Intelligent Computing Hardware",
@@ -739,7 +739,7 @@
           "tz": "AoE",
           "link": "https://ieee-cas.org/files/ieeecass/2026-09/jetcas-cfp.pdf",
           "source": "https://ieee-cas.org/publication/JETCAS",
-          "checked": "2026-10-30"
+          "checked": "2026-10-31"
         },
         {
           "title": "Efficient and Secure Hardware Acceleration for Post-Quantum Cryptography",
@@ -756,7 +756,7 @@
           "tz": "AoE",
           "link": "https://ieee-cas.org/files/ieeecass/2026-10/jetcas-special-issue-proposal-final-cfp_quantum.pdf",
           "source": "https://ieee-cas.org/publication/JETCAS",
-          "checked": "2026-10-30"
+          "checked": "2026-10-31"
         },
         {
           "title": "Power Circuits and Systems Transition when Green Energy and AI Empowerment Cross",
@@ -773,7 +773,7 @@
           "tz": "AoE",
           "link": "https://ieee-cas.org/files/ieeecass/2026-10/jetcas-special-issue-proposal-final_27.pdf",
           "source": "https://ieee-cas.org/publication/JETCAS",
-          "checked": "2026-10-30"
+          "checked": "2026-10-31"
         },
         {
           "title": "AI for ICs and ICs for AI: Emerging Trends in Circuits and Systems",
@@ -790,7 +790,7 @@
           "tz": "AoE",
           "link": "https://ieee-cas.org/files/ieeecass/2026-10/jetcas_cfp_2026_aiforics.pdf",
           "source": "https://ieee-cas.org/publication/JETCAS",
-          "checked": "2026-10-30"
+          "checked": "2026-10-31"
         }
       ]
     },
@@ -802,7 +802,7 @@
       "ccf": null,
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8784029",
-      "checked": "2026-10-30",
+      "checked": "2026-10-31",
       "specialIssues": []
     }
   ]
