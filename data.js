@@ -625,7 +625,7 @@
       "ccf": "A",
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=43",
-      "checked": "2026-11-24",
+      "checked": "2026-11-25",
       "specialIssues": []
     },
     {
