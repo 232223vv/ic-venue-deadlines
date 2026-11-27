@@ -319,7 +319,7 @@
       ],
       "url": "https://a-sscc2026.org",
       "source": "https://epapers2.org/asscc2026/ESR/authorinfo1.php",
-      "checked": "2026-11-25",
+      "checked": "2026-11-27",
       "status": "confirmed",
       "note": "会期与地点取自 a-sscc2026.org;投稿截止取自官网 Authors → Submission Guidelines 指向的官方投稿系统。"
     },
@@ -647,7 +647,7 @@
       "ccf": "C",
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919",
-      "checked": "2026-11-25",
+      "checked": "2026-11-27",
       "specialIssues": []
     },
     {
@@ -658,7 +658,7 @@
       "ccf": null,
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8920",
-      "checked": "2026-11-25",
+      "checked": "2026-11-27",
       "specialIssues": []
     },
     {
@@ -704,7 +704,7 @@
       "ccf": null,
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5503868",
-      "checked": "2026-11-25",
+      "checked": "2026-11-27",
       "specialIssues": [
         {
           "title": "Adaptive Reliability in Circuits and Systems for Exascale and Intelligent Computing Hardware",
@@ -722,7 +722,7 @@
           "tz": "AoE",
           "link": "https://ieee-cas.org/files/ieeecass/2026-11/jetcas-cfp_extended.pdf",
           "source": "https://ieee-cas.org/publication/JETCAS",
-          "checked": "2026-11-25"
+          "checked": "2026-11-27"
         },
         {
           "title": "Power Circuits and Systems Transition when Green Energy and AI Empowerment Cross",
@@ -739,7 +739,7 @@
           "tz": "AoE",
           "link": "https://ieee-cas.org/files/ieeecass/2026-10/jetcas-special-issue-proposal-final_27.pdf",
           "source": "https://ieee-cas.org/publication/JETCAS",
-          "checked": "2026-11-25"
+          "checked": "2026-11-27"
         },
         {
           "title": "AI for ICs and ICs for AI: Emerging Trends in Circuits and Systems",
@@ -756,7 +756,7 @@
           "tz": "AoE",
           "link": "https://ieee-cas.org/files/ieeecass/2026-10/jetcas_cfp_2026_aiforics.pdf",
           "source": "https://ieee-cas.org/publication/JETCAS",
-          "checked": "2026-11-25"
+          "checked": "2026-11-27"
         }
       ]
     },
@@ -768,7 +768,7 @@
       "ccf": null,
       "rolling": true,
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8784029",
-      "checked": "2026-11-25",
+      "checked": "2026-11-27",
       "specialIssues": []
     }
   ]
